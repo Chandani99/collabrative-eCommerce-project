@@ -9,11 +9,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
 @Table(name = "users",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
@@ -61,9 +62,9 @@ public class User {
     private Set<Role> roles = new HashSet<>();
 
 
-//    @Setter
-//    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
-//    private List<Address> addresses = new ArrayList<>();
+
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    private List<Address> addresses = new ArrayList<>();
 
     public Long getUserId() {
         return userId;
@@ -85,9 +86,9 @@ public class User {
         return roles;
     }
 
-//    public List<Address> getAddresses() {
-//        return addresses;
-//    }
+    public List<Address> getAddresses() {
+        return addresses;
+    }
 
 
     public void setUserId(Long userId) {
@@ -110,7 +111,20 @@ public class User {
         this.roles = roles;
     }
 
-//    public void setAddresses(List<Address> addresses) {
-//        this.addresses = addresses;
-//    }
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", addresses=" + addresses +
+                '}';
+    }
 }
