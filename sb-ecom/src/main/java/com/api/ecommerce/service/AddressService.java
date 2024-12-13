@@ -1,5 +1,8 @@
-package Service;
+package com.api.ecommerce.service;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public interface AddressService {
 
     public Address saveAddress();
