@@ -2,30 +2,22 @@ package com.api.ecommerce.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-//@Entity
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Address {
 
-//    @Id
-    private  Long addressId;
-
-
-    private  String city;
-
-
-    public Long getAddressId() {
-        return addressId;
-    }
-
-    public void setAddressId(Long addressId) {
-        this.addressId = addressId;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
+    @Id
+    private Long addressId;
+    private String street;
+    private String buildingName;
+    private String city;
+    private String state;
+    private String country;
+    private String pincode;
 }
