@@ -6,13 +6,18 @@ import com.api.ecommerce.model.Role;
 import com.api.ecommerce.model.User;
 import com.api.ecommerce.repository.RoleRepository;
 import com.api.ecommerce.repository.UserRepository;
+import com.api.ecommerce.security.jwt.AuthEntryPointJwt;
 import com.api.ecommerce.security.jwt.JwtUtils;
 import com.api.ecommerce.security.request.LoginRequest;
 import com.api.ecommerce.security.request.SignupRequest;
 import com.api.ecommerce.security.response.MessageResponse;
 import com.api.ecommerce.security.response.UserInfoResponse;
 import com.api.ecommerce.security.service.UserDetailsImpl;
+import com.api.ecommerce.service.UserService;
 import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseCookie;
@@ -30,8 +35,10 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
+    private static final Logger log = LoggerFactory.getLogger(AuthController.class);
 
     private final JwtUtils jwtUtils;
 
@@ -45,15 +52,23 @@ public class AuthController {
 
     private final PasswordEncoder encoder;
 
+    private final UserService userService;
 
 
 
-    public AuthController(JwtUtils jwtUtils, AuthenticationManager authenticationManager, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder encoder) {
+
+    public AuthController(JwtUtils jwtUtils,
+                          AuthenticationManager authenticationManager,
+                          UserRepository userRepository,
+                          UserService userService,
+                          RoleRepository roleRepository,
+                          PasswordEncoder encoder) {
         this.jwtUtils = jwtUtils;
         this.authenticationManager = authenticationManager;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.encoder = encoder;
+        this.userService = userService;
     }
 
     @PostMapping("/signin")
@@ -90,6 +105,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+        log.info("getting Request");
         if (userRepository.existsByUserName(signUpRequest.getUsername())) {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
         }
@@ -102,6 +118,8 @@ public class AuthController {
         User user = new User(signUpRequest.getUsername(),
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
+
+        log.info("User is {}", user);
 
         Set<String> strRoles = signUpRequest.getRole();
         Set<Role> roles = new HashSet<>();
@@ -140,26 +158,14 @@ public class AuthController {
     }
 
     @GetMapping("/username")
-    public String currentUserName(Authentication authentication){
-        if (authentication != null)
-            return authentication.getName();
-        else
-            return "";
+    public ResponseEntity<String> currentUserName(Authentication authentication){
+       return ResponseEntity.ok().body(userService.currentUserName(authentication));
     }
 
 
     @GetMapping("/user")
     public ResponseEntity<UserInfoResponse> getUserDetails(Authentication authentication){
-        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
-
-        List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
-                .collect(Collectors.toList());
-
-        UserInfoResponse response = new UserInfoResponse(userDetails.getId(),
-                userDetails.getUsername(), roles);
-
-        return ResponseEntity.ok().body(response);
+        return ResponseEntity.ok().body(userService.getUserDetails(authentication));
     }
 
     @PostMapping("/signout")
