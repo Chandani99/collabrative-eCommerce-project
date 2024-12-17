@@ -26,15 +26,15 @@ public class Address {
     private String buildingName;
 
     @NotBlank
-    @Size(min = 4, message = "City name must be atleast 4 characters")
+    @Size(min = 4, message = "City name must be least 4 characters")
     private String city;
 
     @NotBlank
-    @Size(min = 2, message = "State name must be atleast 2 characters")
+    @Size(min = 2, message = "State name must be least 2 characters")
     private String state;
 
     @NotBlank
-    @Size(min = 2, message = "Country name must be atleast 2 characters")
+    @Size(min = 2, message = "Country name must be least 2 characters")
     private String country;
 
     @NotBlank
