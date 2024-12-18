@@ -5,15 +5,13 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
-@Data
 @Table(name = "users",
         uniqueConstraints = {
                 @UniqueConstraint(columnNames = "username"),
@@ -42,6 +40,31 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            fetch = FetchType.EAGER)
+    @JoinTable(name = "user_role",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles = new HashSet<>();
+
+
+
+    @OneToMany(mappedBy = "user",
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true)
+    private Set<Product> products;
+
+
+
+
+    @OneToOne(mappedBy = "user", cascade = { CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    private Cart cart;
+
+
+
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
+    private List<Address> addresses = new ArrayList<>();
+
 
     public User() {
     }
@@ -52,32 +75,47 @@ public class User {
         this.password = password;
     }
 
-    @Setter
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},
-            fetch = FetchType.EAGER)
-    @JoinTable(name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles = new HashSet<>();
 
 
-//    @Setter
-//    @OneToMany(mappedBy = "user", cascade = {CascadeType.PERSIST, CascadeType.MERGE}, orphanRemoval = true)
-//    private List<Address> addresses = new ArrayList<>();
+
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(Set<Product> products) {
+        this.products = products;
+    }
+
+    public Cart getCart() {
+        return cart;
+    }
+
+    public void setCart(Cart cart) {
+        this.cart = cart;
+    }
 
     public Long getUserId() {
         return userId;
     }
 
-    public @NotBlank @Size(max = 20) String getName() {
+    public String getName() {
         return userName;
     }
 
-    public @NotBlank @Size(max = 50) @Email String getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public @NotBlank @Size(max = 120) String getPassword() {
+    public  String getPassword() {
         return password;
     }
 
@@ -85,24 +123,24 @@ public class User {
         return roles;
     }
 
-//    public List<Address> getAddresses() {
-//        return addresses;
-//    }
+    public List<Address> getAddresses() {
+        return addresses;
+    }
 
 
     public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public void setName(@NotBlank @Size(max = 20) String userName) {
+    public void setName(String userName) {
         this.userName = userName;
     }
 
-    public void setEmail(@NotBlank @Size(max = 50) @Email String email) {
+    public void setEmail( String email) {
         this.email = email;
     }
 
-    public void setPassword(@NotBlank @Size(max = 120) String password) {
+    public void setPassword( String password) {
         this.password = password;
     }
 
@@ -110,7 +148,20 @@ public class User {
         this.roles = roles;
     }
 
-//    public void setAddresses(List<Address> addresses) {
-//        this.addresses = addresses;
-//    }
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
+    }
+
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", userName='" + userName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", roles=" + roles +
+                ", addresses=" + addresses +
+                '}';
+    }
 }
