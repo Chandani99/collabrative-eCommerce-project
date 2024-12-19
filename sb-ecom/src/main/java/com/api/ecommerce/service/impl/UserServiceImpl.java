@@ -1,29 +1,13 @@
 package com.api.ecommerce.service.impl;
 
-import com.api.ecommerce.model.AppRole;
-import com.api.ecommerce.model.Role;
-import com.api.ecommerce.model.User;
-import com.api.ecommerce.repository.RoleRepository;
-import com.api.ecommerce.repository.UserRepository;
 import com.api.ecommerce.security.jwt.JwtUtils;
-import com.api.ecommerce.security.request.LoginRequest;
-import com.api.ecommerce.security.request.SignupRequest;
 import com.api.ecommerce.security.response.MessageResponse;
 import com.api.ecommerce.security.response.UserInfoResponse;
 import com.api.ecommerce.security.service.UserDetailsImpl;
-import com.api.ecommerce.service.UserService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
+import com.api.ecommerce.service.IUserService;
 import org.springframework.http.ResponseCookie;
-import org.springframework.http.ResponseEntity;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -31,7 +15,7 @@ import java.util.stream.Collectors;
 
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     private final JwtUtils jwtUtils;
 
