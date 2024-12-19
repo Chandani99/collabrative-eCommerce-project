@@ -27,7 +27,6 @@ public class AppUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByUserName(authentication.getName())
                 .orElseThrow(() -> new UsernameNotFoundException(USER_ERROR + authentication.getName()));
-
         return user.getEmail();
     }
 
@@ -35,7 +34,6 @@ public class AppUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByUserName(authentication.getName())
                 .orElseThrow(() -> new UsernameNotFoundException(USER_ERROR  + authentication.getName()));
-
         return user.getUserId();
     }
 

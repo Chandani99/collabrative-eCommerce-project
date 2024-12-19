@@ -6,14 +6,13 @@ import com.api.ecommerce.model.Role;
 import com.api.ecommerce.model.User;
 import com.api.ecommerce.repository.RoleRepository;
 import com.api.ecommerce.repository.UserRepository;
-import com.api.ecommerce.security.jwt.AuthEntryPointJwt;
 import com.api.ecommerce.security.jwt.JwtUtils;
 import com.api.ecommerce.security.request.LoginRequest;
 import com.api.ecommerce.security.request.SignupRequest;
 import com.api.ecommerce.security.response.MessageResponse;
 import com.api.ecommerce.security.response.UserInfoResponse;
 import com.api.ecommerce.security.service.UserDetailsImpl;
-import com.api.ecommerce.service.UserService;
+import com.api.ecommerce.service.IUserService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -52,7 +51,7 @@ public class AuthController {
 
     private final PasswordEncoder encoder;
 
-    private final UserService userService;
+    private final IUserService userService;
 
 
 
@@ -60,7 +59,7 @@ public class AuthController {
     public AuthController(JwtUtils jwtUtils,
                           AuthenticationManager authenticationManager,
                           UserRepository userRepository,
-                          UserService userService,
+                          IUserService userService,
                           RoleRepository roleRepository,
                           PasswordEncoder encoder) {
         this.jwtUtils = jwtUtils;
