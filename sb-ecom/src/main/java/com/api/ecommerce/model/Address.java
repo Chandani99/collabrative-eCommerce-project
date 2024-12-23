@@ -8,6 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.*;
+import lombok.Data;
 
 
 @Entity
@@ -43,24 +47,6 @@ public class Address {
 
     @NotBlank
     @Size(min = 5, message = "Pincode must be atleast 5 characters")
-
-    @Size(max = 100)
-    private String street;
-
-    @NotBlank
-    private Long buildingNumber;
-    @NotBlank
-    @Size(max = 100)
-    private String city;
-    @NotBlank
-    @Size(max = 100)
-    private String state;
-    @NotBlank
-    @Size(max = 100)
-    private String country;
-    @NotBlank
-    @Size(max = 100)
-
     private String pincode;
 
     @ManyToOne
