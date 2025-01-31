@@ -1,6 +1,7 @@
 package com.api.ecommerce.controller;
 
 
+
 import com.api.ecommerce.config.AppConstants;
 import com.api.ecommerce.payload.ProductDTO;
 import com.api.ecommerce.payload.ProductResponse;
@@ -78,4 +79,10 @@ public class ProductController {
         ProductDTO updatedProduct = productService.updateProductImage(productId, image);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class ProductController {
+
 }

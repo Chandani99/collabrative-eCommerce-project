@@ -1,8 +1,19 @@
 package com.api.ecommerce.model;
 
+
 import jakarta.persistence.*;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+
+import lombok.*;
+import lombok.Data;
+
 
 
 @Entity
@@ -14,6 +25,7 @@ public class Address {
     private Long addressId;
 
     @NotBlank
+
     @Size(min = 5, message = "Street name must be atleast 5 characters")
     private String street;
 

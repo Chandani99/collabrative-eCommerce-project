@@ -1,5 +1,6 @@
 package com.api.ecommerce.model;
 
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -176,4 +177,5 @@ public class Product {
     public void setProducts(List<CartItem> products) {
         this.products = products;
     }
+
 }
