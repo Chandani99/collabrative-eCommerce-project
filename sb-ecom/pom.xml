@@ -12,7 +12,7 @@
 	<artifactId>sb-ecom</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sb-ecom</name>
-	<description>Spring boot Ecommmerce Project</description>
+	<description>Spring boot Ecommerce Project</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -61,12 +61,23 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<optional>true</optional>
+			<version>1.18.28</version>
+<!--			<scope>provided</scope>-->
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j2-impl</artifactId>
+			<version>2.22.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.security</groupId>
@@ -95,27 +106,17 @@
 			<version>0.12.5</version>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>2.6.0</version>
+		</dependency>
 
-
-		<!--		<dependency>-->
-<!--			<groupId>log4j</groupId>-->
-<!--			<artifactId>log4j</artifactId>-->
-<!--			<version>1.2.16</version>-->
-<!--			&lt;!&ndash; <scope>provided</scope> &ndash;&gt;-->
-<!--		</dependency>-->
-
-<!--		<dependency>-->
-<!--			<groupId>org.slf4j</groupId>-->
-<!--			<artifactId>slf4j-api</artifactId>-->
-<!--			<version>1.7.5</version>-->
-<!--			&lt;!&ndash; <scope>provided</scope> &ndash;&gt;-->
-<!--		</dependency>-->
-
-<!--Actuator dependency-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
 </dependencies>
 
 	<build>

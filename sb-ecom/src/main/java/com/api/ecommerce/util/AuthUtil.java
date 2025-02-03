@@ -9,14 +9,14 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AppUtil {
+public class AuthUtil {
 
     private final UserRepository userRepository;
 
 
     private static final String USER_ERROR = "User Not Found with username: ";
 
-    public AppUtil(UserRepository userRepository) {
+    public AuthUtil(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
@@ -27,7 +27,6 @@ public class AppUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByUserName(authentication.getName())
                 .orElseThrow(() -> new UsernameNotFoundException(USER_ERROR + authentication.getName()));
-
         return user.getEmail();
     }
 
@@ -35,7 +34,6 @@ public class AppUtil {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         User user = userRepository.findByUserName(authentication.getName())
                 .orElseThrow(() -> new UsernameNotFoundException(USER_ERROR  + authentication.getName()));
-
         return user.getUserId();
     }
 
