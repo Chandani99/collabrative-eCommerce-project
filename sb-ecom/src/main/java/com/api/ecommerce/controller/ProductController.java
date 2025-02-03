@@ -80,9 +80,5 @@ public class ProductController {
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
 
-import org.springframework.web.bind.annotation.RestController;
-
-@RestController
-public class ProductController {
 
 }
