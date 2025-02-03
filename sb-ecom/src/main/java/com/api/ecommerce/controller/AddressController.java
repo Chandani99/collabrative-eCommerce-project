@@ -5,6 +5,10 @@ import com.api.ecommerce.model.User;
 import com.api.ecommerce.payload.AddressDTO;
 import com.api.ecommerce.service.IAddressService;
 import com.api.ecommerce.util.AuthUtil;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,19 +17,31 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
+@Tag(
+        name = "Address",
+        description = "Address API"
+)
 @RestController
 @RequestMapping("/api")
 public class AddressController {
 
+    private final AuthUtil authUtil;
+    private final IAddressService addressService;
 
-    @Autowired
-    AuthUtil authUtil;
-
-    @Autowired
-    IAddressService addressService;
-
+    public AddressController(AuthUtil authUtil, IAddressService addressService) {
+        this.authUtil = authUtil;
+        this.addressService = addressService;
+    }
 
 
+    @Operation(summary = "Create a new address", description = "Creates a new address for the logged-in user and returns the saved address details.")
+    @ApiResponses({
+            @ApiResponse(responseCode = "201", description = "Address created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
+    })
     @PostMapping("/addresses")
     public ResponseEntity<AddressDTO> createAddress(@Valid @RequestBody AddressDTO addressDTO){
         User user = authUtil.loggedInUser();
