@@ -35,6 +35,12 @@ class ProductControllerTest {
         productDTO = new ProductDTO();
         productDTO.setProductId(1L);
         productDTO.setProductName("Test Product");
+        productDTO.setDescription("test product description");
+        productDTO.setImage("image1");
+        productDTO.setPrice(1000);
+        productDTO.setDiscount(200);
+        productDTO.setQuantity(10);
+        productDTO.setSpecialPrice(700);
 
         productResponse = new ProductResponse();
         productResponse.setContent(Collections.singletonList(productDTO));
