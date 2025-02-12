@@ -61,20 +61,7 @@ public class AuthController {
 
 
 
-    public AuthController(JwtUtils jwtUtils,
-                          AuthenticationManager authenticationManager,
-                          UserRepository userRepository,
-                          IUserService userService,
-                          RoleRepository roleRepository,
-                          PasswordEncoder encoder) {
-        this.jwtUtils = jwtUtils;
-        this.authenticationManager = authenticationManager;
-        this.userRepository = userRepository;
-        this.roleRepository = roleRepository;
-        this.encoder = encoder;
-        this.userService = userService;
-    }
-
+   
     @Operation(summary = "User login", description = "Authenticates a user and returns a JWT token")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Successfully authenticated",
@@ -186,7 +173,7 @@ public class AuthController {
     })
     @GetMapping("/username")
     public ResponseEntity<String> currentUserName(Authentication authentication){
-       return ResponseEntity.ok().body(userService.currentUserName(authentication));
+        return ResponseEntity.ok().body(userService.currentUserName(authentication));
     }
 
     @Operation(summary = "Get authenticated user's details", description = "Retrieves detailed information about the currently authenticated user.")
@@ -214,9 +201,6 @@ public class AuthController {
                         cookie.toString())
                 .body(new MessageResponse("You've been signed out!"));
     }
-
-
-
 
 
 
