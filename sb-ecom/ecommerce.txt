@@ -1,37 +1,255 @@
-2025-02-10 11:12:18.565  INFO 13383 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 13383 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
-2025-02-10 11:12:18.599  INFO 13383 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
-2025-02-10 11:12:19.118  INFO 13383 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-02-10 11:12:19.119  INFO 13383 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-02-10 11:12:22.870  INFO 13383 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-02-10 11:12:23.030  INFO 13383 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 150 ms. Found 10 JPA repository interfaces.
-2025-02-10 11:12:26.901  INFO 13383 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
-2025-02-10 11:12:26.934  INFO 13383 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-02-10 11:12:26.935  INFO 13383 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
-2025-02-10 11:12:27.119  INFO 13383 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-02-10 11:12:27.120  INFO 13383 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7996 ms
-2025-02-10 11:12:29.042  INFO 13383 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-02-10 11:12:29.289  INFO 13383 --- [sb-ecom] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-02-10 11:12:29.425  INFO 13383 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-02-10 11:12:30.869  INFO 13383 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-02-10 11:12:31.005  INFO 13383 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-02-10 11:12:31.781  INFO 13383 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@100d4d05
-2025-02-10 11:12:31.786  INFO 13383 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-02-10 11:12:34.807  INFO 13383 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-02-10 11:12:35.087  INFO 13383 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-02-10 11:12:36.191  INFO 13383 --- [sb-ecom] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
-2025-02-10 11:12:36.192  WARN 13383 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
-2025-02-10 11:12:36.283  INFO 13383 --- [sb-ecom] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-02-10 11:12:37.903  WARN 13383 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-02-10 11:12:39.186  INFO 13383 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
-2025-02-10 11:12:42.952  INFO 13383 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-02-10 11:12:43.251  INFO 13383 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
-2025-02-10 11:12:43.285  INFO 13383 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 26.16 seconds (process running for 27.96)
-2025-02-10 11:15:20.480  INFO 13383 --- [sb-ecom] [http-nio-8091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-10 11:15:20.481  INFO 13383 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-02-10 11:15:20.486  INFO 13383 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-02-10 11:15:24.289  INFO 13383 --- [sb-ecom] [http-nio-8091-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2184 ms
-2025-02-10 11:16:03.876  WARN 13383 --- [sb-ecom] [http-nio-8091-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: 'name' is required and must not be empty.]
-2025-02-10 12:09:59.543  WARN 13383 --- [sb-ecom] [http-nio-8091-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.NullPointerException: Cannot invoke "org.springframework.security.core.Authentication.getPrincipal()" because "authentication" is null]
-2025-02-10 12:32:38.443  INFO 13383 --- [sb-ecom] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-02-10 12:32:38.518  INFO 13383 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-02-10 12:32:38.543  INFO 13383 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-12 12:56:23.386  INFO 345407 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 345407 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
+2025-02-12 12:56:23.408  INFO 345407 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-02-12 12:56:23.678  INFO 345407 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-12 12:56:23.680  INFO 345407 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-12 12:56:28.094  INFO 345407 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-12 12:56:28.325  INFO 345407 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 216 ms. Found 10 JPA repository interfaces.
+2025-02-12 12:56:31.117  INFO 345407 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
+2025-02-12 12:56:31.178  INFO 345407 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-12 12:56:31.179  INFO 345407 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-12 12:56:31.367  INFO 345407 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-12 12:56:31.368  INFO 345407 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7686 ms
+2025-02-12 12:56:32.088  INFO 345407 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-12 12:56:32.189  INFO 345407 --- [sb-ecom] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-12 12:56:32.287  INFO 345407 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-12 12:56:33.298  INFO 345407 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-12 12:56:33.382  INFO 345407 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-12 12:56:34.529  INFO 345407 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@363beb3
+2025-02-12 12:56:34.537  INFO 345407 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-12 12:56:37.895  INFO 345407 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-12 12:56:38.355  INFO 345407 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 12:56:40.105  INFO 345407 --- [sb-ecom] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-12 12:56:40.107  WARN 345407 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-02-12 12:56:40.190  INFO 345407 --- [sb-ecom] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-12 12:56:42.146  WARN 345407 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-12 12:56:44.139  INFO 345407 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-02-12 12:56:45.655  INFO 345407 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-12 12:56:45.808  INFO 345407 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
+2025-02-12 12:56:45.859  INFO 345407 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 24.218 seconds (process running for 26.407)
+2025-02-12 12:57:14.804  INFO 345407 --- [sb-ecom] [http-nio-8091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-12 12:57:14.804  INFO 345407 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-12 12:57:14.807  INFO 345407 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2025-02-12 12:57:19.029  INFO 345407 --- [sb-ecom] [http-nio-8091-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 3151 ms
+2025-02-12 13:00:28.766  WARN 345407 --- [sb-ecom] [http-nio-8091-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: 'name' is required and must not be empty.]
+2025-02-12 13:08:37.416  INFO 345407 --- [sb-ecom] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 13:08:37.428  INFO 345407 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-12 13:08:37.456  INFO 345407 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-12 13:08:44.458  INFO 380614 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 380614 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
+2025-02-12 13:08:44.471  INFO 380614 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-02-12 13:08:44.962  INFO 380614 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-12 13:08:44.976  INFO 380614 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-12 13:08:49.319  INFO 380614 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-12 13:08:49.789  INFO 380614 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 401 ms. Found 10 JPA repository interfaces.
+2025-02-12 13:08:52.429  INFO 380614 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
+2025-02-12 13:08:52.453  INFO 380614 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-12 13:08:52.453  INFO 380614 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-12 13:08:52.569  INFO 380614 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-12 13:08:52.570  INFO 380614 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7593 ms
+2025-02-12 13:08:53.531  INFO 380614 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-12 13:08:53.645  INFO 380614 --- [sb-ecom] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-12 13:08:53.720  INFO 380614 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-12 13:08:54.449  INFO 380614 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-12 13:08:54.555  INFO 380614 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-12 13:08:55.527  INFO 380614 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fc3912d
+2025-02-12 13:08:55.531  INFO 380614 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-12 13:08:58.655  INFO 380614 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-12 13:08:59.265  INFO 380614 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 13:09:01.522  INFO 380614 --- [sb-ecom] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-12 13:09:01.524  WARN 380614 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-02-12 13:09:01.582  INFO 380614 --- [sb-ecom] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-12 13:09:03.068  WARN 380614 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-12 13:09:04.746  INFO 380614 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-02-12 13:09:06.493  INFO 380614 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-12 13:09:06.686  INFO 380614 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
+2025-02-12 13:09:06.751  INFO 380614 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 23.804 seconds (process running for 25.805)
+2025-02-12 13:10:52.024  INFO 380614 --- [sb-ecom] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 13:10:52.030  INFO 380614 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-12 13:10:52.049  INFO 380614 --- [sb-ecom] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-12 13:10:58.865  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 386822 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
+2025-02-12 13:10:58.873  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-02-12 13:10:59.127  INFO 386822 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-02-12 13:10:59.132  INFO 386822 --- [sb-ecom] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-02-12 13:11:02.712  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-12 13:11:02.978  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 251 ms. Found 10 JPA repository interfaces.
+2025-02-12 13:11:05.217  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
+2025-02-12 13:11:05.235  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-12 13:11:05.236  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-12 13:11:05.343  INFO 386822 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-12 13:11:05.344  INFO 386822 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 6210 ms
+2025-02-12 13:11:06.223  INFO 386822 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-12 13:11:06.307  INFO 386822 --- [sb-ecom] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-02-12 13:11:06.362  INFO 386822 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-12 13:11:07.122  INFO 386822 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-12 13:11:07.215  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-12 13:11:08.149  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5eafa5da
+2025-02-12 13:11:08.155  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-12 13:11:10.818  INFO 386822 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-12 13:11:11.268  INFO 386822 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 13:11:13.059  INFO 386822 --- [sb-ecom] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-12 13:11:13.062  WARN 386822 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-02-12 13:11:13.154  INFO 386822 --- [sb-ecom] [restartedMain] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-02-12 13:11:14.586  WARN 386822 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-12 13:11:16.118  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-02-12 13:11:17.383  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-12 13:11:17.575  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
+2025-02-12 13:11:17.619  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 20.405 seconds (process running for 21.912)
+2025-02-12 13:11:43.176  INFO 386822 --- [sb-ecom] [http-nio-8091-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-12 13:11:43.177  INFO 386822 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-12 13:11:43.183  INFO 386822 --- [sb-ecom] [http-nio-8091-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2025-02-12 13:12:34.164  WARN 386822 --- [sb-ecom] [http-nio-8091-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: 'name' is required and must not be empty.]
+2025-02-12 13:16:11.686  INFO 386822 --- [sb-ecom] [http-nio-8091-exec-3] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 2304 ms
+2025-02-12 16:54:36.015  INFO 386822 --- [sb-ecom] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 72 class path changes (0 additions, 71 deletions, 1 modification)
+2025-02-12 16:54:36.047  INFO 386822 --- [sb-ecom] [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 16:54:36.055  INFO 386822 --- [sb-ecom] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-12 16:54:36.092  INFO 386822 --- [sb-ecom] [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-02-12 16:54:36.576  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 386822 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
+2025-02-12 16:54:36.576  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-02-12 16:54:37.769  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-12 16:54:37.774  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-02-12 16:54:38.477  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
+2025-02-12 16:54:38.478  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-12 16:54:38.479  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-12 16:54:38.522  INFO 386822 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-12 16:54:38.522  INFO 386822 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1936 ms
+2025-02-12 16:54:38.912  INFO 386822 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-12 16:54:38.920  INFO 386822 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-12 16:54:38.944  INFO 386822 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-12 16:54:38.946  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-02-12 16:54:38.976  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7bd31917
+2025-02-12 16:54:38.976  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-02-12 16:54:39.044  INFO 386822 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-12 16:54:39.044  INFO 386822 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 16:54:39.349  WARN 386822 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-12 16:54:40.420  WARN 386822 --- [sb-ecom] [restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: d0c4adb7-5b22-4586-b6c7-09e6a38067c9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2025-02-12 16:54:40.431  INFO 386822 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2025-02-12 16:54:40.529  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-02-12 16:54:40.800  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-12 16:54:40.837  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
+2025-02-12 16:54:40.855  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 4.397 seconds (process running for 13425.149)
+2025-02-12 16:54:40.864  INFO 386822 --- [sb-ecom] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   ManagementWebSecurityAutoConfiguration matched:
+      - found 'session' scope (OnWebApplicationCondition)
+      - AllNestedConditions 2 matched 0 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) did not find any beans; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+      - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   UserDetailsServiceAutoConfiguration matched:
+      - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+      - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+      - @ConditionalOnBean (types: org.springframework.security.config.annotation.ObjectPostProcessor; SearchStrategy: all) found bean 'objectPostProcessor'; @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+    None
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2025-02-12 16:54:47.247  INFO 386822 --- [sb-ecom] [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 71 class path changes (71 additions, 0 deletions, 0 modifications)
+2025-02-12 16:54:47.259  INFO 386822 --- [sb-ecom] [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 16:54:47.260  INFO 386822 --- [sb-ecom] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-02-12 16:54:47.278  INFO 386822 --- [sb-ecom] [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2025-02-12 16:54:47.576  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Starting SbEcomApplication using Java 17.0.13 with PID 386822 (/home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom/target/classes started by developer in /home/developer/Documents/Collabrative Project/collabrative-eCommerce-project/sb-ecom)
+2025-02-12 16:54:47.577  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : No active profile set, falling back to 1 default profile: "default"
+2025-02-12 16:54:48.520  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-02-12 16:54:48.573  INFO 386822 --- [sb-ecom] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 10 JPA repository interfaces.
+2025-02-12 16:54:48.955  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8091 (http)
+2025-02-12 16:54:48.956  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-12 16:54:48.956  INFO 386822 --- [sb-ecom] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-12 16:54:49.009  INFO 386822 --- [sb-ecom] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-12 16:54:49.010  INFO 386822 --- [sb-ecom] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1417 ms
+2025-02-12 16:54:49.254  INFO 386822 --- [sb-ecom] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-02-12 16:54:49.258  INFO 386822 --- [sb-ecom] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-02-12 16:54:49.272  INFO 386822 --- [sb-ecom] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-02-12 16:54:49.273  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-02-12 16:54:49.296  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10309ea9
+2025-02-12 16:54:49.296  INFO 386822 --- [sb-ecom] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-02-12 16:54:50.084  INFO 386822 --- [sb-ecom] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-02-12 16:54:50.395  INFO 386822 --- [sb-ecom] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-02-12 16:54:51.088  INFO 386822 --- [sb-ecom] [restartedMain] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-02-12 16:54:51.090  WARN 386822 --- [sb-ecom] [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
+2025-02-12 16:54:51.741  WARN 386822 --- [sb-ecom] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-02-12 16:54:52.338  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 15 endpoints beneath base path '/actuator'
+2025-02-12 16:54:53.009  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2025-02-12 16:54:53.066  INFO 386822 --- [sb-ecom] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8091 (http) with context path '/'
+2025-02-12 16:54:53.122  INFO 386822 --- [sb-ecom] [restartedMain] com.api.ecommerce.SbEcomApplication      : Started SbEcomApplication in 5.631 seconds (process running for 13437.415)
+2025-02-12 16:54:53.393  INFO 386822 --- [sb-ecom] [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+    None
+
+
+Negative matches:
+-----------------
+
+   ManagementWebSecurityAutoConfiguration:
+      Did not match:
+         - AllNestedConditions 1 matched 1 did not; NestedCondition on DefaultWebSecurityCondition.Beans @ConditionalOnMissingBean (types: org.springframework.security.web.SecurityFilterChain; SearchStrategy: all) found beans of type 'org.springframework.security.web.SecurityFilterChain' filterChain; NestedCondition on DefaultWebSecurityCondition.Classes @ConditionalOnClass found required classes 'org.springframework.security.web.SecurityFilterChain', 'org.springframework.security.config.annotation.web.builders.HttpSecurity' (DefaultWebSecurityCondition)
+      Matched:
+         - found 'session' scope (OnWebApplicationCondition)
+
+   SpringBootWebSecurityConfiguration.WebSecurityEnablerConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (names: springSecurityFilterChain; SearchStrategy: all) found beans named springSecurityFilterChain (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.config.annotation.web.configuration.EnableWebSecurity' (OnClassCondition)
+
+   UserDetailsServiceAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.security.authentication.AuthenticationManager,org.springframework.security.authentication.AuthenticationProvider,org.springframework.security.core.userdetails.UserDetailsService,org.springframework.security.authentication.AuthenticationManagerResolver,org.springframework.security.oauth2.jwt.JwtDecoder; SearchStrategy: all) found beans of type 'org.springframework.security.authentication.AuthenticationManager' authenticationManager and found beans of type 'org.springframework.security.core.userdetails.UserDetailsService' userDetailsServiceImpl and found beans of type 'org.springframework.security.authentication.AuthenticationProvider' authenticationProvider (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required class 'org.springframework.security.authentication.AuthenticationManager' (OnClassCondition)
+         - AnyNestedCondition 1 matched 2 did not; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.PasswordConfigured @ConditionalOnProperty (spring.security.user.password) did not find property 'password'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.NameConfigured @ConditionalOnProperty (spring.security.user.name) did not find property 'name'; NestedCondition on UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured.MissingAlternative @ConditionalOnMissingClass did not find unwanted classes 'org.springframework.security.oauth2.client.registration.ClientRegistrationRepository', 'org.springframework.security.oauth2.server.resource.introspection.OpaqueTokenIntrospector', 'org.springframework.security.saml2.provider.service.registration.RelyingPartyRegistrationRepository' (UserDetailsServiceAutoConfiguration.MissingAlternativeOrUserPropertiesConfigured)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
