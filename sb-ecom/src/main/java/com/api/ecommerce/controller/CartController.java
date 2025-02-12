@@ -16,15 +16,19 @@ import java.util.List;
 @RequestMapping("/api")
 public class CartController {
 
-    @Autowired
-    private CartRepository cartRepository;
 
-    @Autowired
-    private AuthUtil authUtil;
+    private final CartRepository cartRepository;
 
-    @Autowired
-    private ICartService cartService;
 
+    private final AuthUtil authUtil;
+
+    private final  ICartService cartService;
+
+    public CartController(CartRepository cartRepository, AuthUtil authUtil, ICartService cartService) {
+        this.cartRepository = cartRepository;
+        this.authUtil = authUtil;
+        this.cartService = cartService;
+    }
 
     @PostMapping("/carts/products/{productId}/quantity/{quantity}")
     public ResponseEntity<CartDTO> addProductToCart(@PathVariable Long productId,

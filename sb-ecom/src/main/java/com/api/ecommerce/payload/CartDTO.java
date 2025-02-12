@@ -1,9 +1,19 @@
 package com.api.ecommerce.payload;
 
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Getter
+@Setter
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class CartDTO {
 
     private Long cartId;
@@ -11,36 +21,5 @@ public class CartDTO {
     private List<ProductDTO> products = new ArrayList<>();
 
 
-    public Long getCartId() {
-        return cartId;
-    }
 
-    public void setCartId(Long cartId) {
-        this.cartId = cartId;
-    }
-
-    public Double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(Double totalPrice) {
-        this.totalPrice = totalPrice;
-    }
-
-    public List<ProductDTO> getProducts() {
-        return products;
-    }
-
-    public void setProducts(List<ProductDTO> products) {
-        this.products = products;
-    }
-
-    public CartDTO(Long cartId, Double totalPrice, List<ProductDTO> products) {
-        this.cartId = cartId;
-        this.totalPrice = totalPrice;
-        this.products = products;
-    }
-
-    public CartDTO() {
-    }
 }

@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: sb-ecom
+  datasource:
+    url: jdbc:mysql://localhost:3306/ecommerce
+    username: root
+    password: Rohit@0165
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  app:
+    jwtSecret: mySecretKey123912738aopsgjnspkmndfsopkvajoirjg94gf2opfng2moknm
+    jwtExpirationMs: 3000000
+  ecom:
+    app:
+      jwtCookieName: springBootEcom
+
+server:
+  port: 8091
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+project:
+  image: images/
+
+logging:
+  file:
+    path: /
+    name: ecommerce.txt
+  level:
+    com.ecommerce: DEBUG
+    net.ttddyy.dsproxy.listener: debug
+  timezone: IST
+  pattern:
+    dateformat: yyyy-MM-dd HH:mm:ss.SSS

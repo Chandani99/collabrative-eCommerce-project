@@ -15,8 +15,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class CategoryController {
 
-    @Autowired
-    private ICategoryService categoryService;
+
+    private final ICategoryService categoryService;
+
+    public CategoryController(ICategoryService categoryService) {
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/public/categories")
     public ResponseEntity<CategoryResponse> getAllCategories(

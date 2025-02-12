@@ -2,9 +2,17 @@ package com.api.ecommerce.model;
 
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @Table(name = "cart_items")
+@Getter
+@Setter
+@RequiredArgsConstructor
+@NoArgsConstructor
 public class CartItem {
 
     @Id
@@ -24,84 +32,5 @@ public class CartItem {
     private double productPrice;
 
 
-    public CartItem(Cart cart, Product product, Integer quantity, double discount, double productPrice) {
-        this.cart = cart;
-        this.product = product;
-        this.quantity = quantity;
-        this.discount = discount;
-        this.productPrice = productPrice;
-    }
 
-    public CartItem(Long cartItemId, Cart cart, Product product, Integer quantity, double discount, double productPrice) {
-        this.cartItemId = cartItemId;
-        this.cart = cart;
-        this.product = product;
-        this.quantity = quantity;
-        this.discount = discount;
-        this.productPrice = productPrice;
-    }
-
-    public CartItem() {
-    }
-
-
-    @Override
-    public String toString() {
-        return "CartItem{" +
-                "cartItemId=" + cartItemId +
-                ", cart=" + cart +
-                ", product=" + product +
-                ", quantity=" + quantity +
-                ", discount=" + discount +
-                ", productPrice=" + productPrice +
-                '}';
-    }
-
-    public Long getCartItemId() {
-        return cartItemId;
-    }
-
-    public void setCartItemId(Long cartItemId) {
-        this.cartItemId = cartItemId;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(double discount) {
-        this.discount = discount;
-    }
-
-    public double getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(double productPrice) {
-        this.productPrice = productPrice;
-    }
 }

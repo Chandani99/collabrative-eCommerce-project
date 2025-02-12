@@ -14,11 +14,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class OrderController {
 
-    @Autowired
-    private IOrderService orderService;
 
-    @Autowired
-    private AuthUtil authUtil;
+    private final IOrderService orderService;
+
+
+    private final AuthUtil authUtil;
+
+    public OrderController(IOrderService orderService, AuthUtil authUtil) {
+        this.orderService = orderService;
+        this.authUtil = authUtil;
+    }
 
     @PostMapping("/order/users/payments/{paymentMethod}")
     public ResponseEntity<OrderDTO> orderProducts(@PathVariable String paymentMethod, @RequestBody OrderRequestDTO orderRequestDTO) {
