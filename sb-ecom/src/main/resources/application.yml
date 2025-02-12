@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/ecommerce
     username: root
-    password: Rohit@0165
+    password: Chandani@99
   jpa:
     hibernate:
       ddl-auto: update
