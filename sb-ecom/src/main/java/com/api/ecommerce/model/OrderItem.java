@@ -3,17 +3,14 @@ package com.api.ecommerce.model;
 
 import jakarta.persistence.*;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "order_items")
 @Getter
 @Setter
 @RequiredArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor
 public class OrderItem {
 
 

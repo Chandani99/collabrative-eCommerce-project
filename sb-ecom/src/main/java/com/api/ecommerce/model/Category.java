@@ -11,7 +11,7 @@ import java.util.List;
 @Entity(name = "categories")
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 public class Category {
     @Id

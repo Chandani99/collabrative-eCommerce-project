@@ -8,7 +8,7 @@ import lombok.*;
 @Table(name = "roles")
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 public class Role {
 
@@ -24,4 +24,7 @@ public class Role {
     private AppRole roleName;
 
 
+    public Role(AppRole appRole) {
+        this.roleName = appRole;
+    }
 }

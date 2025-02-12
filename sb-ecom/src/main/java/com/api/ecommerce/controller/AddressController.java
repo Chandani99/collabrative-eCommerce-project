@@ -37,24 +37,13 @@ public class AddressController {
     }
 
 
+
     @Operation(summary = "Create a new address", description = "Creates a new address for the logged-in user and returns the saved address details.")
     @ApiResponses({
-            @ApiResponse(responseCode = "201", description = "Address created successfully",
-                    content = @Content(
-                    schema = @Schema(implementation = AddressDTO.class)
-            )
-            ),
-            @ApiResponse(responseCode = "400", description = "Invalid input data" ,
-                    content = @Content(
-                            schema = @Schema(implementation = APIException.class)
-                    )
-            ),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in",   content = @Content(
-                    schema = @Schema(implementation = APIException.class)
-            )),
-            @ApiResponse(responseCode = "500", description = "Internal server error",   content = @Content(
-                    schema = @Schema(implementation = APIException.class)
-            ))
+            @ApiResponse(responseCode = "201", description = "Address created successfully"),
+            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
+            @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PostMapping("/addresses")
     public ResponseEntity<AddressDTO> createAddress(@Valid @RequestBody AddressDTO addressDTO){
@@ -63,13 +52,9 @@ public class AddressController {
         return new ResponseEntity<>(savedAddressDTO, HttpStatus.CREATED);
     }
 
-
-    @Operation(summary = "Get all addresses", description = "Retrieves a list of all saved addresses."
-
-    )
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "List of addresses retrieved successfully"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
+    @Operation(summary = "Retrieve all addresses", description = "Fetches a list of addresses")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved list of addresses"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/addresses")
@@ -78,11 +63,10 @@ public class AddressController {
         return new ResponseEntity<>(addressList, HttpStatus.OK);
     }
 
-    @Operation(summary = "Get address by ID", description = "Retrieves a specific address based on the provided ID.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Address retrieved successfully"),
+    @Operation(summary = "Get address by ID", description = "Fetches an address by its unique ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved address"),
             @ApiResponse(responseCode = "404", description = "Address not found"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/addresses/{addressId}")
@@ -91,12 +75,10 @@ public class AddressController {
         return new ResponseEntity<>(addressDTO, HttpStatus.OK);
     }
 
-
-    @Operation(summary = "Get addresses for the logged-in user",
-            description = "Retrieves a list of addresses associated with the currently authenticated user.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "User addresses retrieved successfully"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
+    @Operation(summary = "Get logged-in user's addresses", description = "Retrieves the addresses associated with the currently logged-in user.")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved user's addresses"),
+            @ApiResponse(responseCode = "401", description = "Unauthorized, user not authenticated"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @GetMapping("/users/addresses")
@@ -106,12 +88,11 @@ public class AddressController {
         return new ResponseEntity<>(addressList, HttpStatus.OK);
     }
 
-    @Operation(summary = "Update an address", description = "Updates an existing address based on the provided ID and returns the updated address details.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Address updated successfully"),
-            @ApiResponse(responseCode = "400", description = "Invalid input data"),
+    @Operation(summary = "Update an address", description = "Updates an existing address based on the given ID and request body")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully updated address"),
+            @ApiResponse(responseCode = "400", description = "Invalid request body"),
             @ApiResponse(responseCode = "404", description = "Address not found"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @PutMapping("/addresses/{addressId}")
@@ -121,15 +102,14 @@ public class AddressController {
         return new ResponseEntity<>(updatedAddress, HttpStatus.OK);
     }
 
-    @Operation(summary = "Delete an address", description = "Deletes an address based on the provided ID and returns a success message.")
-    @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Address deleted successfully"),
+    @Operation(summary = "Delete an address", description = "Deletes an existing address by its ID")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Successfully deleted the address"),
             @ApiResponse(responseCode = "404", description = "Address not found"),
-            @ApiResponse(responseCode = "401", description = "Unauthorized - User not logged in"),
             @ApiResponse(responseCode = "500", description = "Internal server error")
     })
     @DeleteMapping("/addresses/{addressId}")
-    public ResponseEntity<String> deleteAddress(@PathVariable Long addressId){
+    public ResponseEntity<String> updateAddress(@PathVariable Long addressId){
         String status = addressService.deleteAddress(addressId);
         return new ResponseEntity<>(status, HttpStatus.OK);
     }

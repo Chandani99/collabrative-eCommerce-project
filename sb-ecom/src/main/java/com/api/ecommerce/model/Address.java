@@ -20,7 +20,7 @@ import lombok.Data;
 @Table(name = "addresses")
 @Getter
 @Setter
-@RequiredArgsConstructor
+@AllArgsConstructor
 @NoArgsConstructor
 public class Address {
 

@@ -39,17 +39,6 @@ public class WebSecurityConfig {
    private AuthEntryPointJwt unauthorizedHandler;
 
 
-
-
-
-
-
-
-
-
-
-
-
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter() {
         return new AuthTokenFilter();
