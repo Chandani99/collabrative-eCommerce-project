@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -17,6 +18,10 @@ import java.util.Set;
                 @UniqueConstraint(columnNames = "username"),
                 @UniqueConstraint(columnNames = "email")
         })
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
 
@@ -24,7 +29,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long userId;
-    @NotBlank
+
+//    @NotBlank
     @Size(max = 20)
     @Column(name = "username")
     private String userName;
@@ -66,8 +72,6 @@ public class User {
     private List<Address> addresses = new ArrayList<>();
 
 
-    public User() {
-    }
 
     public User(String userName, String email, String password) {
         this.userName = userName;
@@ -76,92 +80,4 @@ public class User {
     }
 
 
-
-
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
-
-    public Cart getCart() {
-        return cart;
-    }
-
-    public void setCart(Cart cart) {
-        this.cart = cart;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public String getName() {
-        return userName;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public  String getPassword() {
-        return password;
-    }
-
-    public Set<Role> getRoles() {
-        return roles;
-    }
-
-    public List<Address> getAddresses() {
-        return addresses;
-    }
-
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public void setName(String userName) {
-        this.userName = userName;
-    }
-
-    public void setEmail( String email) {
-        this.email = email;
-    }
-
-    public void setPassword( String password) {
-        this.password = password;
-    }
-
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
-    }
-
-    public void setAddresses(List<Address> addresses) {
-        this.addresses = addresses;
-    }
-
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "userId=" + userId +
-                ", userName='" + userName + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", roles=" + roles +
-                ", addresses=" + addresses +
-                '}';
-    }
 }

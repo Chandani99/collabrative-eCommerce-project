@@ -1,16 +1,18 @@
 package com.api.ecommerce.controller;
 
 
+import com.api.ecommerce.exception.APIException;
 import com.api.ecommerce.model.User;
 import com.api.ecommerce.payload.AddressDTO;
 import com.api.ecommerce.service.IAddressService;
 import com.api.ecommerce.util.AuthUtil;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -33,6 +35,7 @@ public class AddressController {
         this.authUtil = authUtil;
         this.addressService = addressService;
     }
+
 
 
     @Operation(summary = "Create a new address", description = "Creates a new address for the logged-in user and returns the saved address details.")
