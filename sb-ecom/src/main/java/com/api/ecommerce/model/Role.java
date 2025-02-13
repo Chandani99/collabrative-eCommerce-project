@@ -1,16 +1,17 @@
 package com.api.ecommerce.model;
 
 import jakarta.persistence.*;
-import lombok.ToString;
+import lombok.*;
 
 
 @Entity
 @Table(name = "roles")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Role {
 
-
-    public Role() {
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,23 +23,8 @@ public class Role {
     @Column(length = 20, name = "role_name")
     private AppRole roleName;
 
-    public Role(AppRole roleName) {
-        this.roleName = roleName;
-    }
 
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public AppRole getRoleName() {
-        return roleName;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
-
-    public void setRoleName(AppRole roleName) {
-        this.roleName = roleName;
+    public Role(AppRole appRole) {
+        this.roleName = appRole;
     }
 }

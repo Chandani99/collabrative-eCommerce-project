@@ -2,6 +2,7 @@ package com.api.ecommerce.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -9,7 +10,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "orders")
-public class Order {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Order  {
 
 
     @Id
@@ -38,107 +43,4 @@ public class Order {
     private Address address;
 
 
-    public Order() {
-    }
-
-    public Order(Long orderId, String email, List<OrderItem> orderItems, LocalDate orderDate, Payment payment, Double totalAmount, String orderStatus, Address address) {
-        this.orderId = orderId;
-        this.email = email;
-        this.orderItems = orderItems;
-        this.orderDate = orderDate;
-        this.payment = payment;
-        this.totalAmount = totalAmount;
-        this.orderStatus = orderStatus;
-        this.address = address;
-    }
-
-
-    public Order(String email, List<OrderItem> orderItems, LocalDate orderDate, Payment payment, Double totalAmount, String orderStatus, Address address) {
-        this.email = email;
-        this.orderItems = orderItems;
-        this.orderDate = orderDate;
-        this.payment = payment;
-        this.totalAmount = totalAmount;
-        this.orderStatus = orderStatus;
-        this.address = address;
-    }
-
-
-    public Long getOrderId() {
-        return orderId;
-    }
-
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
-
-    public @Email String getEmail() {
-        return email;
-    }
-
-    public void setEmail(@Email String email) {
-        this.email = email;
-    }
-
-    public List<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<OrderItem> orderItems) {
-        this.orderItems = orderItems;
-    }
-
-    public LocalDate getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(LocalDate orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public Payment getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
-
-    public Double getTotalAmount() {
-        return totalAmount;
-    }
-
-    public void setTotalAmount(Double totalAmount) {
-        this.totalAmount = totalAmount;
-    }
-
-    @Override
-    public String toString() {
-        return "Order{" +
-                "orderId=" + orderId +
-                ", email='" + email + '\'' +
-                ", orderItems=" + orderItems +
-                ", orderDate=" + orderDate +
-                ", payment=" + payment +
-                ", totalAmount=" + totalAmount +
-                ", orderStatus='" + orderStatus + '\'' +
-                ", address=" + address +
-                '}';
-    }
-
-    public String getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(String orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
 }

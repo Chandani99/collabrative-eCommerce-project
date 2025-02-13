@@ -6,10 +6,6 @@ import com.api.ecommerce.config.AppConstants;
 import com.api.ecommerce.payload.ProductDTO;
 import com.api.ecommerce.payload.ProductResponse;
 import com.api.ecommerce.service.IProductService;
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,22 +19,9 @@ import java.io.IOException;
 @RequestMapping("/api")
 public class ProductController {
 
+    @Autowired
+    IProductService productService;
 
-    private final IProductService productService;
-
-    public ProductController(IProductService productService) {
-        this.productService = productService;
-    }
-
-    @Operation(
-            summary = "Add a new product",
-            description = "Adds a new product under a specific category."
-    )
-    @ApiResponse(
-            responseCode = "201",
-            description = "Product successfully added",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductDTO.class))
-    )
     @PostMapping("/admin/categories/{categoryId}/product")
     public ResponseEntity<ProductDTO> addProduct(@Valid @RequestBody ProductDTO productDTO,
                                                  @PathVariable Long categoryId){
@@ -46,15 +29,6 @@ public class ProductController {
         return new ResponseEntity<>(savedProductDTO, HttpStatus.CREATED);
     }
 
-    @Operation(
-            summary = "Get all products",
-            description = "Retrieves a paginated list of all available products."
-    )
-    @ApiResponse(
-            responseCode = "200",
-            description = "Products retrieved successfully",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponse.class))
-    )
     @GetMapping("/public/products")
     public ResponseEntity<ProductResponse> getAllProducts(
             @RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
@@ -66,15 +40,6 @@ public class ProductController {
         return new ResponseEntity<>(productResponse,HttpStatus.OK);
     }
 
-    @Operation(
-            summary = "Get products by category",
-            description = "Retrieves products belonging to a specific category."
-    )
-    @ApiResponse(
-            responseCode = "200",
-            description = "Products retrieved successfully",
-            content = @Content(mediaType = "application/json", schema = @Schema(implementation = ProductResponse.class))
-    )
     @GetMapping("/public/categories/{categoryId}/products")
     public ResponseEntity<ProductResponse> getProductsByCategory(@PathVariable Long categoryId,
                                                                  @RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
@@ -85,11 +50,6 @@ public class ProductController {
         return new ResponseEntity<>(productResponse, HttpStatus.OK);
     }
 
-    @Operation(
-            summary = "Search products by keyword",
-            description = "Searches for products using a keyword."
-    )
-    @ApiResponse(responseCode = "302", description = "Products found")
     @GetMapping("/public/products/keyword/{keyword}")
     public ResponseEntity<ProductResponse> getProductsByKeyword(@PathVariable String keyword,
                                                                 @RequestParam(name = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber,
@@ -100,11 +60,6 @@ public class ProductController {
         return new ResponseEntity<>(productResponse, HttpStatus.FOUND);
     }
 
-    @Operation(
-            summary = "Update product details",
-            description = "Updates an existing product's details."
-    )
-    @ApiResponse(responseCode = "200", description = "Product updated successfully")
     @PutMapping("/admin/products/{productId}")
     public ResponseEntity<ProductDTO> updateProduct(@Valid @RequestBody ProductDTO productDTO,
                                                     @PathVariable Long productId){
@@ -112,27 +67,18 @@ public class ProductController {
         return new ResponseEntity<>(updatedProductDTO, HttpStatus.OK);
     }
 
-    @Operation(
-            summary = "Delete a product",
-            description = "Deletes a product by its ID."
-    )
-    @ApiResponse(responseCode = "200", description = "Product deleted successfully")
     @DeleteMapping("/admin/products/{productId}")
     public ResponseEntity<ProductDTO> deleteProduct(@PathVariable Long productId){
         ProductDTO deletedProduct = productService.deleteProduct(productId);
         return new ResponseEntity<>(deletedProduct, HttpStatus.OK);
     }
 
-    @Operation(
-            summary = "Update product image",
-            description = "Updates an existing product's image."
-    )
-    @ApiResponse(responseCode = "200", description = "Product image updated successfully")
     @PutMapping("/products/{productId}/image")
     public ResponseEntity<ProductDTO> updateProductImage(@PathVariable Long productId,
                                                          @RequestParam("image") MultipartFile image) throws IOException {
         ProductDTO updatedProduct = productService.updateProductImage(productId, image);
         return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
     }
+
 
 }

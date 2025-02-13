@@ -2,6 +2,9 @@ package com.api.ecommerce.security.request;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Builder;
+import lombok.Data;
+import lombok.Getter;
+import org.springframework.stereotype.Service;
 
 
 @Builder
@@ -35,4 +38,5 @@ public class LoginRequest {
     public void setPassword(@NotBlank String password) {
         this.password = password;
     }
+
 }
